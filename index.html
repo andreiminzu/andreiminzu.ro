@@ -14,6 +14,7 @@
 
     html, body {
       margin: 0;
+      width: 100%;
       min-height: 100%;
     }
 
@@ -24,59 +25,71 @@
       background-image: url('screen.jpg');
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: left center;
-      overflow-x: hidden;
+      background-position: center center;
+      overflow: hidden;
+      position: relative;
     }
 
     .page {
-      min-height: 100vh;
+      position: relative;
       width: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
-      padding: 10vh 8vw 6vh 8vw;
+      min-height: 100vh;
     }
 
-    .content {
-      width: min(520px, 100%);
-      text-align: left;
-      margin-right: 180px;
+    /* TITLU SUS, CENTRAL */
+    .hero-top {
+      position: absolute;
+      top: 6vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: min(90vw, 760px);
+      z-index: 3;
     }
 
     .tag {
-      font-size: 13px;
-      letter-spacing: 6px;
-      margin-bottom: 28px;
-      color: rgba(255,255,255,0.95);
-    }
-
-    h1 {
-      font-family: 'Lato', sans-serif;
-      font-size: clamp(48px, 6vw, 82px);
-      line-height: 0.95;
-      font-weight: 900;
-      margin: 0 0 28px 0;
-      max-width: 420px;
-      text-wrap: balance;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 1.45;
-      margin: 0;
-      max-width: 420px;
+      font-size: 14px;
+      letter-spacing: 7px;
+      margin-bottom: 18px;
       color: rgba(255,255,255,0.96);
     }
 
+    .hero-top h1 {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: clamp(44px, 5.5vw, 78px);
+      line-height: 0.95;
+      color: #ffffff;
+    }
+
+    /* TEXT DESCRIPTIV ÎN DREAPTA */
+    .info-right {
+      position: absolute;
+      top: 33vh;
+      right: 22vw;
+      width: 380px;
+      text-align: left;
+      z-index: 3;
+    }
+
+    .info-right p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.96);
+    }
+
+    /* BUTOANE PE DREAPTA */
     .buttons {
-      position: fixed;
-      right: 32px;
+      position: absolute;
+      right: 40px;
       top: 50%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       gap: 16px;
-      z-index: 10;
+      z-index: 4;
     }
 
     a.button {
@@ -89,7 +102,7 @@
       min-width: 210px;
       text-align: left;
       color: #fff;
-      background: rgba(30,30,30,0.34);
+      background: rgba(30,30,30,0.28);
       border: 1px solid rgba(255,255,255,0.28);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -98,7 +111,7 @@
 
     a.button:hover {
       transform: translateX(-4px);
-      background: rgba(20,20,20,0.5);
+      background: rgba(20,20,20,0.42);
       border-color: rgba(255,255,255,0.42);
     }
 
@@ -112,17 +125,54 @@
       background: #ffffff;
     }
 
-    footer {
-      margin-top: 36px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.9);
+    /* TEXT JOS, CENTRAL */
+    .footer-center {
+      position: absolute;
+      bottom: 34px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(92vw, 760px);
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.94);
+      z-index: 3;
     }
 
-    @media (max-width: 1200px) {
-      .content {
-        margin-right: 150px;
-        width: min(460px, 100%);
+    .footer-center .inline {
+      display: inline-flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== DESKTOP TUNING ===== */
+    @media (min-width: 1200px) {
+      body {
+        background-position: center center;
+      }
+
+      .info-right {
+        right: 19vw;
+        width: 360px;
+      }
+    }
+
+    /* ===== TABLET / ECRANE MAI MICI ===== */
+    @media (max-width: 1199px) {
+      .hero-top {
+        top: 5vh;
+      }
+
+      .info-right {
+        right: 200px;
+        width: 320px;
+        top: 34vh;
+      }
+
+      .buttons {
+        right: 22px;
       }
 
       a.button {
@@ -130,121 +180,113 @@
       }
     }
 
-    @media (max-width: 900px) {
-      body {
-        background-position: 18% center;
-      }
-
-      .page {
-        justify-content: center;
-        padding: 8vh 5vw 5vh;
-      }
-
-      .content {
-        margin-right: 0;
-        width: min(520px, 100%);
-        text-align: center;
-      }
-
-      h1,
-      p {
-        max-width: none;
-      }
-
-      .buttons {
-        position: static;
-        transform: none;
-        flex-direction: column;
-        width: min(340px, 100%);
-        margin: 28px auto 0;
-      }
-
-      a.button {
-        min-width: 0;
-        width: 100%;
-        text-align: center;
-      }
-    }
-
+    /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       body {
         background-size: cover;
-        background-position: 12% center;
+        background-position: 38% center;
       }
 
-      .page {
-        align-items: flex-start;
-        justify-content: center;
-        padding: 9vh 20px 32px;
-      }
-
-      .content {
-        width: 100%;
-        max-width: 360px;
-        text-align: left;
+      .hero-top {
+        top: 5vh;
+        width: 88vw;
       }
 
       .tag {
         font-size: 11px;
-        letter-spacing: 4px;
-        margin-bottom: 18px;
+        letter-spacing: 5px;
+        margin-bottom: 14px;
       }
 
-      h1 {
-        font-size: clamp(34px, 12vw, 56px);
-        line-height: 0.98;
-        margin-bottom: 20px;
-        max-width: 250px;
+      .hero-top h1 {
+        font-size: clamp(34px, 10vw, 56px);
+        line-height: 0.96;
       }
 
-      p {
+      .info-right {
+        top: 39vh;
+        left: 8.5vw;
+        right: auto;
+        width: 42vw;
+        max-width: 220px;
+        text-align: left;
+      }
+
+      .info-right p {
         font-size: 16px;
-        line-height: 1.5;
-        max-width: 250px;
+        line-height: 1.45;
       }
 
       .buttons {
-        width: min(260px, 100%);
-        margin: 26px 0 0 auto;
+        right: 16px;
+        top: 60%;
+        transform: translateY(-50%);
+        gap: 12px;
       }
 
       a.button {
-        padding: 13px 16px;
+        min-width: 150px;
+        padding: 12px 14px;
         border-radius: 14px;
         font-size: 14px;
+        text-align: center;
       }
 
-      footer {
-        margin-top: 24px;
+      .footer-center {
+        bottom: 22px;
         font-size: 12px;
-        max-width: 250px;
+      }
+
+      .footer-center .inline {
+        gap: 10px;
+        white-space: nowrap;
       }
     }
 
+    /* ===== TELEFOANE ÎNGUSTE ===== */
     @media (max-width: 430px) {
       body {
-        background-position: 10% center;
+        background-position: 34% center;
       }
 
-      .page {
-        padding-top: 8vh;
+      .hero-top {
+        top: 5.5vh;
       }
 
-      .content {
-        max-width: 320px;
+      .hero-top h1 {
+        font-size: 32px;
       }
 
-      h1 {
-        max-width: 220px;
+      .info-right {
+        top: 37vh;
+        left: 9vw;
+        width: 40vw;
+        max-width: 185px;
       }
 
-      p,
-      footer {
-        max-width: 220px;
+      .info-right p {
+        font-size: 15px;
       }
 
       .buttons {
-        width: 240px;
+        right: 10px;
+        top: 61%;
+      }
+
+      a.button {
+        min-width: 132px;
+        font-size: 13px;
+        padding: 11px 12px;
+      }
+
+      .footer-center {
+        bottom: 18px;
+        width: 94vw;
+        font-size: 11px;
+      }
+
+      .footer-center .inline {
+        gap: 8px;
       }
     }
   </style>
@@ -252,28 +294,33 @@
 
 <body>
   <div class="page">
-    <div class="content">
+
+    <div class="hero-top">
       <div class="tag">andreiminzu.ro</div>
-
       <h1>We'll be back soon.</h1>
+    </div>
 
+    <div class="info-right">
       <p>
         Website-ul este în construcție.<br>
         Pentru colaborări sau oferte, mă poți contacta direct.
       </p>
+    </div>
 
-      <footer>
-        București • Ilfov<br>
-        Foto • Video • Tururi Virtuale
-      </footer>
+    <div class="buttons">
+      <a href="tel:+40746179883" class="button primary">📞 Sună-mă</a>
+      <a href="https://wa.me/40746179883" class="button">💬 WhatsApp</a>
+      <a href="https://instagram.com/andreiminzu/" target="_blank" class="button">📸 Instagram</a>
+      <a href="mailto:andrei.minzu@icloud.com?subject=Solicitare ofertă foto imobiliară&body=Salut, te contactez de pe site." class="button">✉️ Email</a>
+    </div>
 
-      <div class="buttons">
-        <a href="tel:+40746179883" class="button primary">📞 Sună-mă</a>
-        <a href="https://wa.me/40746179883" class="button">💬 WhatsApp</a>
-        <a href="https://instagram.com/andreiminzu/" target="_blank" class="button">📸 Instagram</a>
-        <a href="mailto:andrei.minzu@icloud.com?subject=Solicitare ofertă foto imobiliară&body=Salut, te contactez de pe site." class="button">✉️ Email</a>
+    <div class="footer-center">
+      <div class="inline">
+        <span>București • Ilfov</span>
+        <span>Foto • Video • Tururi Virtuale</span>
       </div>
     </div>
+
   </div>
 </body>
 </html>
