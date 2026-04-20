@@ -12,12 +12,12 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      background: url('screen.jpg') no-repeat center center/cover;
       color: #ffffff;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
     }
 
@@ -35,7 +35,6 @@
 
     p {
       font-size: 18px;
-      opacity: 0.8;
       margin-bottom: 35px;
       line-height: 1.5;
     }
@@ -43,25 +42,30 @@
     .tag {
       font-size: 13px;
       letter-spacing: 3px;
-      color: #888;
       margin-bottom: 20px;
     }
 
+    /* BUTOANE PE DREAPTA */
     .buttons {
+      position: fixed;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
+      flex-direction: column;
       gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
     }
 
     a.button {
       text-decoration: none;
-      padding: 14px 22px;
+      padding: 12px 18px;
       border-radius: 10px;
-      font-size: 15px;
+      font-size: 14px;
       transition: all 0.25s ease;
       display: inline-block;
-      min-width: 140px;
+      min-width: 160px;
+      text-align: left;
+      backdrop-filter: blur(8px);
     }
 
     .primary {
@@ -71,24 +75,41 @@
 
     .primary:hover {
       background: #e6e6e6;
-      transform: translateY(-2px);
+      transform: translateX(-3px);
     }
 
     .secondary {
-      border: 1px solid #444;
+      background: rgba(0,0,0,0.4);
       color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
     }
 
     .secondary:hover {
-      background: #222;
-      transform: translateY(-2px);
+      background: rgba(0,0,0,0.6);
+      transform: translateX(-3px);
     }
 
     footer {
       margin-top: 50px;
       font-size: 13px;
-      color: #666;
       line-height: 1.6;
+    }
+
+    /* RESPONSIVE (telefon) */
+    @media (max-width: 768px) {
+      .buttons {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      a.button {
+        min-width: auto;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -105,18 +126,14 @@
       Pentru colaborări sau oferte, mă poți contacta direct.
     </p>
 
-    <div class="buttons">
-      <a href="tel:+40746179883" class="button primary">📞 Sună-mă</a>
-      <a href="https://wa.me/40746179883" class="button secondary">💬 WhatsApp</a>
-      <a href="https://instagram.com/andreiminzu/" target="_blank" class="button secondary">📸 Instagram</a>
-      <a href="mailto:andrei.minzu@icloud.com?subject=Solicitare ofertă foto imobiliară&body=Salut, te contactez de pe site." class="button secondary">✉️ Email</a>
-    </div>
-
-    <footer>
-      București • Ilfov<br>
-      Foto • Video • Tururi Virtuale
-    </footer>
-
   </div>
+
+  <div class="buttons">
+    <a href="tel:+40746179883" class="button secondary">📞 Sună-mă</a>
+    <a href="https://wa.me/40746179883" class="button secondary">💬 WhatsApp</a>
+    <a href="https://instagram.com/andreiminzu/" target="_blank" class="button secondary">📸 Instagram</a>
+    <a href="mailto:andrei.minzu@icloud.com?subject=Solicitare ofertă foto imobiliară&body=Salut, te contactez de pe site." class="button secondary">✉️ Email</a>
+  </div>
+
 </body>
 </html>
