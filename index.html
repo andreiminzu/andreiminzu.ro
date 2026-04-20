@@ -20,7 +20,7 @@
       overflow: hidden;
     }
 
-    /* TITLU */
+    /* ===== TITLU ===== */
     .hero {
       position: absolute;
       top: 6vh;
@@ -43,7 +43,7 @@
       margin: 0;
     }
 
-    /* TEXT */
+    /* ===== TEXT DREAPTA (DESKTOP) ===== */
     .info {
       position: absolute;
       top: 35vh;
@@ -53,7 +53,7 @@
       line-height: 1.5;
     }
 
-    /* BUTOANE */
+    /* ===== BUTOANE ===== */
     .buttons {
       position: absolute;
       right: 30px;
@@ -80,7 +80,7 @@
       color: #000;
     }
 
-    /* FOOTER */
+    /* ===== FOOTER ===== */
     .footer {
       position: absolute;
       bottom: 20px;
@@ -88,9 +88,10 @@
       transform: translateX(-50%);
       font-size: 14px;
       text-align: center;
+      line-height: 1.6;
     }
 
-    /* MOBILE */
+    /* ===== MOBILE ===== */
     @media (max-width: 768px) {
 
       body {
@@ -101,12 +102,12 @@
         font-size: 42px;
       }
 
+      /* TEXT SUB TITLU */
       .info {
-        position: absolute;
-        top: 34vh;
-        left: 8vw;
-        right: auto;
-        width: 55%;
+        position: static;
+        margin-top: 20px;
+        margin-left: 8vw;
+        width: 70%;
         font-size: 15px;
       }
 
@@ -116,6 +117,7 @@
       }
     }
 
+    /* ===== TELEFOANE MICI ===== */
     @media (max-width: 430px) {
 
       body {
@@ -123,8 +125,8 @@
       }
 
       .info {
-        top: 38vh;
-        width: 50%;
+        width: 65%;
+        font-size: 14px;
       }
     }
 
@@ -136,11 +138,12 @@
   <div class="hero">
     <div class="tag">andreiminzu.ro</div>
     <h1>We'll be back soon.</h1>
-  </div>
 
-  <div class="info">
-    Website-ul este în construcție.<br>
-    Pentru colaborări sau oferte, mă poți contacta direct.
+    <!-- TEXT MUTAT SUB TITLU PE MOBILE -->
+    <div class="info">
+      Website-ul este în construcție.<br>
+      Pentru colaborări sau oferte, mă poți contacta direct.
+    </div>
   </div>
 
   <div class="buttons">
@@ -151,7 +154,8 @@
   </div>
 
   <div class="footer">
-    București • Ilfov &nbsp;&nbsp; Foto • Video • Tururi Virtuale
+    București • Ilfov<br>
+    Foto • Video • Tururi Virtuale
   </div>
 
 </body>
