@@ -20,7 +20,7 @@
       overflow: hidden;
     }
 
-    /* ===== TITLU ===== */
+    /* TITLU */
     .hero {
       position: absolute;
       top: 6vh;
@@ -43,7 +43,7 @@
       margin: 0;
     }
 
-    /* ===== TEXT DREAPTA ===== */
+    /* TEXT */
     .info {
       position: absolute;
       top: 35vh;
@@ -53,7 +53,7 @@
       line-height: 1.5;
     }
 
-    /* ===== BUTOANE ===== */
+    /* BUTOANE */
     .buttons {
       position: absolute;
       right: 30px;
@@ -72,13 +72,7 @@
       border: 1px solid rgba(255,255,255,0.3);
       backdrop-filter: blur(8px);
       color: #fff;
-      text-align: left;
       min-width: 180px;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      transform: translateX(-3px);
     }
 
     .primary {
@@ -86,7 +80,7 @@
       color: #000;
     }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     .footer {
       position: absolute;
       bottom: 20px;
@@ -96,25 +90,20 @@
       text-align: center;
     }
 
-    /* ===== MOBILE ===== */
+    /* MOBILE */
     @media (max-width: 768px) {
 
       body {
         background-position: 35% center;
       }
 
-      .hero {
-        top: 5vh;
-      }
-
       h1 {
         font-size: 42px;
       }
 
-      /* AICI E FIXUL IMPORTANT */
       .info {
         position: absolute;
-        top: 32vh; /* ← asta controlează poziția sub titlu */
+        top: 34vh;
         left: 8vw;
         right: auto;
         width: 55%;
@@ -125,19 +114,8 @@
         right: 12px;
         top: 60%;
       }
-
-      .button {
-        min-width: 140px;
-        font-size: 14px;
-      }
-
-      .footer {
-        font-size: 12px;
-        width: 90%;
-      }
     }
 
-    /* ===== TELEFOANE MICI ===== */
     @media (max-width: 430px) {
 
       body {
@@ -145,12 +123,8 @@
       }
 
       .info {
-        top: 36vh; /* ← mută exact în zona verde */
+        top: 38vh;
         width: 50%;
-      }
-
-      .buttons {
-        top: 62%;
       }
     }
 
