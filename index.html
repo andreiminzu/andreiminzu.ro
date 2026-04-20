@@ -3,38 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>andreiminzu.ro | Real Estate Media</title>
+  <title>andreiminzu.ro</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      width: 100%;
-      min-height: 100%;
-    }
+    * { box-sizing: border-box; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      color: #ffffff;
-      min-height: 100vh;
-      background-image: url('screen.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      overflow: hidden;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      height: 100vh;
+      background: url('screen.jpg') no-repeat center center/cover;
       position: relative;
+      overflow: hidden;
     }
 
-    .page {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
+    /* ===== TITLU ===== */
+    .hero {
+      position: absolute;
+      top: 6vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 90%;
     }
+
+    .tag {
+      letter-spacing: 6px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: clamp(40px, 6vw, 80px);
+      margin: 0;
+    }
+
+    /* ===== TEXT DREAPTA ===== */
+    .info {
+      position: absolute;
+      top: 35vh;
+      right: 18vw;
+      width: 320px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ===== BUTOANE ===== */
+    .buttons {
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .button {
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      text-align: left;
+      min-width: 180px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateX(-3px);
+    }
+
+    .primary {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+
+      body {
+        background-position: 35% center;
+      }
+
+      .hero {
+        top: 5vh;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      /* AICI E FIXUL IMPORTANT */
+      .info {
+        position: absolute;
+        top: 32vh; /* ← asta controlează poziția sub titlu */
+        left: 8vw;
+        right: auto;
+        width: 55%;
+        font-size: 15px;
+      }
+
+      .buttons {
+        right: 12px;
+        top: 60%;
+      }
+
+      .button {
+        min-width: 140px;
+        font-size: 14px;
+      }
+
+      .footer {
+        font-size: 12px;
+        width: 90%;
+      }
+    }
+
+    /* ===== TELEFOANE MICI ===== */
+    @media (max-width: 430px) {
+
+      body {
+        background-position: 30% center;
+      }
+
+      .info {
+        top: 36vh; /* ← mută exact în zona verde */
+        width: 50%;
+      }
+
+      .buttons {
+        top: 62%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="hero">
+    <div class="tag">andreiminzu.ro</div>
+    <h1>We'll be back soon.</h1>
+  </div>
+
+  <div class="info">
+    Website-ul este în construcție.<br>
+    Pentru colaborări sau oferte, mă poți contacta direct.
+  </div>
+
+  <div class="buttons">
+    <a href="tel:+40746179883" class="button primary">📞 Sună-mă</a>
+    <a href="https://wa.me/40746179883" class="button">💬 WhatsApp</a>
+    <a href="https://instagram.com/andreiminzu/" target="_blank" class="button">📸 Instagram</a>
+    <a href="mailto:andrei.minzu@icloud.com" class="button">✉️ Email</a>
+  </div>
+
+  <div class="footer">
+    București • Ilfov &nbsp;&nbsp; Foto • Video • Tururi Virtuale
+  </div>
+
+</body>
+</html>    }
 
     /* TITLU SUS, CENTRAL */
     .hero-top {
